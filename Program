@@ -1,0 +1,31 @@
+import java.util.*;
+class dec_hex
+{
+    String str;
+    public dec_hex()
+    {
+        str="0123456789ABCDEF";
+    }
+    
+    public String DecToHex(int n)
+    {
+        if(n>=0 && n<16)
+        {
+            return ""+str.charAt(n);
+        }
+        else
+        {
+            return DecToHex(n/16)+str.charAt(n%16);
+        }
+    }
+    
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a Decimal Number: ");
+        int num=sc.nextInt();
+        dec_hex ob=new dec_hex();
+        System.out.print("It's Hexadecimal Equivalent is: ");
+        System.out.println(ob.DecToHex(num));
+    }
+}
